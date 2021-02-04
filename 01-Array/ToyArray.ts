@@ -2,9 +2,10 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 11:57:38
+ * @LastEditTime: 2021-02-04 13:20:40
  * @FilePath: /Toy-Data-Structures/01-Array/ToyArray.ts
  */
+import { isEqual } from 'lodash';
 
 // ToyArray 目前只支持同类型的子元素
 class ToyArray<T> {
@@ -120,7 +121,7 @@ class ToyArray<T> {
     // 查找数组中是否有元素 e
     contains(e: T): boolean {
         for (let i = 0; i < this.size; i++) {
-            if (this.data[i] === e) {
+            if (isEqual(this.data[i], e)) {
                 return true;
             }
         }
@@ -130,7 +131,7 @@ class ToyArray<T> {
     // 返回数组中给定元素 e 的第一个索引，未找到则返回 -1
     indexOf(e: T): number {
         for (let i = 0; i < this.size; i++) {
-            if (this.data[i] === e) {
+            if (isEqual(this.data[i], e)) {
                 return i;
             }
         }
@@ -194,3 +195,10 @@ test.pop();
 test.pop();
 test.pop();
 console.log(`缩容测试：${test}`);
+
+let test2 = new ToyArray<object>(5);
+test2.push({ a: 1 });
+test2.push({ b: 2 });
+console.log('indexOf 测试：', test2.indexOf({ b: 2 }));
+
+console.log(`对象 isEqual 测试：${test2}`);
