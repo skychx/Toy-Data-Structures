@@ -2,17 +2,17 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 13:20:40
+ * @LastEditTime: 2021-02-04 18:13:02
  * @FilePath: /Toy-Data-Structures/01-Array/ToyArray.ts
  */
 import { isEqual } from 'lodash';
 
 // ToyArray 目前只支持同类型的子元素
-class ToyArray<T> {
+export class ToyArray<T> {
     private size: number;
     private data: T[];
 
-    constructor(capacity = 10) {
+    constructor(capacity: number = 10) {
         this.data = new Array(capacity);
         this.size = 0;
     }
@@ -146,6 +146,14 @@ class ToyArray<T> {
         return this.data[index];
     }
 
+    getFirst(): T {
+        return this.data[0];
+    }
+
+    getLast(): T {
+        return this.data[this.size - 1];
+    }
+
     /** 改 **/
 
     // 获取 index 索引位置的元素
@@ -172,33 +180,3 @@ class ToyArray<T> {
         return res;
     }
 }
-
-// 测试代码
-let test = new ToyArray<number>(5);
-test.push(1);
-test.push(2);
-test.push(3);
-test.push(4);
-test.push(5);
-console.log(`测试代码：${test}`);
-
-// 扩容测试
-test.add(1, 6);
-console.log(`扩容测试：${test}`);
-
-// 测试复杂度振荡
-test.remove(2);
-console.log(`测试复杂度振荡：${test}`);
-
-// 缩容测试
-test.pop();
-test.pop();
-test.pop();
-console.log(`缩容测试：${test}`);
-
-let test2 = new ToyArray<object>(5);
-test2.push({ a: 1 });
-test2.push({ b: 2 });
-console.log('indexOf 测试：', test2.indexOf({ b: 2 }));
-
-console.log(`对象 isEqual 测试：${test2}`);
