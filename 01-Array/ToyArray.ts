@@ -1,3 +1,11 @@
+/*
+ * @Author: skychx
+ * @Date: 2021-02-03 22:10:00
+ * @LastEditors: skychx
+ * @LastEditTime: 2021-02-04 11:57:38
+ * @FilePath: /Toy-Data-Structures/01-Array/ToyArray.ts
+ */
+
 // ToyArray 目前只支持同类型的子元素
 class ToyArray<T> {
     private size: number;
@@ -29,7 +37,7 @@ class ToyArray<T> {
 
     // 返回数组是否为空
     isEmpty(): boolean {
-        return this.size == 0;
+        return this.size === 0;
     }
 
     /** 增 **/
@@ -132,7 +140,7 @@ class ToyArray<T> {
     // 获取 index 索引位置的元素
     get(index: number): T {
         if (index < 0 || index >= this.size) {
-            throw new Error("Get failed. Index is illegal.");
+            throw new Error('Get failed. Index is illegal.');
         }
         return this.data[index];
     }
@@ -142,7 +150,7 @@ class ToyArray<T> {
     // 获取 index 索引位置的元素
     set(index: number, e: T): void {
         if (index < 0 || index >= this.size) {
-            throw new Error("Set failed. Index is illegal.");
+            throw new Error('Set failed. Index is illegal.');
         }
         this.data[index] = e;
     }
@@ -156,7 +164,7 @@ class ToyArray<T> {
         for (let i = 0; i < this.size; i++) {
             res += `${this.data[i]}`;
             if (i !== this.size - 1) {
-                res += ', '
+                res += ', ';
             }
         }
         res += ']\n';
