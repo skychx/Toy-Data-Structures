@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-05 15:00:18
+ * @LastEditTime: 2021-02-05 15:02:24
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -41,6 +41,7 @@
 然后就可以直接用 vscode 调试 TS 代码了。
 
 
+
 ## 数据结构
 
 ### 01.数组 ToyArray
@@ -49,26 +50,15 @@
 
 #### API:
 
-- 基础
-  - getSize()
-  - getCapacity()
-  - isEmpty()
-- 增
-  - add(index, e)
-  - unshift(e)
-  - push(e)
-- 删
-  - remove(index)
-  - removeElement(e)
-  - shift()
-- 查
-  - contains(e)
-  - indexOf(e)
-  - get(index)
-  - getFirst()
-  - getLast()
-- 改
-  - set(index, e)
+| 基础          | 增            | 删               | 查          | 改            |
+| ------------- | ------------- | ---------------- | ----------- | ------------- |
+| getSize()     | add(index, e) | remove(index)    | contains(e) | set(index, e) |
+| getCapacity() | unshift(e)    | removeElement(e) | indexOf(e)  |               |
+| isEmpty()     | push(e)       | shift()          | get(index)  |               |
+|               |               |                  | getFirst()  |               |
+|               |               |                  | getLast()   |               |
+
+
 
 
 ### 02.链表 ToyLinkedList
@@ -77,24 +67,13 @@
 
 #### API:
 
-- 基础
-  - getSize()
-  - getCapacity()
-  - isEmpty()
-- 增
-  - add(index, e)
-  - addFirst(e)
-  - addLast(e)
-- 删
-  - remove(index)
-  - removeFirst()
-  - removeLast()
-- 查
-  - get(index)
-  - getFirst()
-  - getLast()
-- 改
-  - set(index, e)
+| 基础          | 增            | 删            | 查         | 改            |
+| ------------- | ------------- | ------------- | ---------- | ------------- |
+| getSize()     | add(index, e) | remove(index) | get(index) | set(index, e) |
+| getCapacity() | addFirst(e)   | removeFirst() | getFirst() |               |
+| isEmpty()     | addLast(e)    | removeLast()  | getLast()  |               |
+
+
 
 
 ### 03.栈 ToyStack
@@ -106,15 +85,11 @@
 
 #### API:
 
-- 基础
-  - getSize()
-  - isEmpty()
-- 增
-  - push(e)
-- 删
-  - pop()
-- 查
-  - peek()
+| 基础      | 增      | 删    | 查     | 改   |
+| --------- | ------- | ----- | ------ | ---- |
+| getSize() | push(e) | pop() | peek() |      |
+| isEmpty() |         |       |        |      |
+
 
 
 #### 04.队列 ToyQueue
@@ -127,12 +102,8 @@
 
 #### API:
 
-- 基础
-  - getSize()
-  - isEmpty()
-- 增
-  - enqueue(e)
-- 删
-  - dequeue()
-- 查
-  - getFront()
+| 基础      | 增         | 删        | 查         | 改   |
+| --------- | ---------- | --------- | ---------- | ---- |
+| getSize() | enqueue(e) | dequeue() | getFront() |      |
+| isEmpty() |            |           |            |      |
+
