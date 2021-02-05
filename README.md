@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-05 15:02:24
+ * @LastEditTime: 2021-02-05 15:13:27
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -59,7 +59,7 @@
 |               |               |                  | getLast()   |               |
 
 
-
+<br />
 
 ### 02.链表 ToyLinkedList
 
@@ -74,7 +74,7 @@
 | isEmpty()     | addLast(e)    | removeLast()  | getLast()  |               |
 
 
-
+<br />
 
 ### 03.栈 ToyStack
 
@@ -91,8 +91,9 @@
 | isEmpty() |         |       |        |      |
 
 
+<br />
 
-#### 04.队列 ToyQueue
+### 04.队列 ToyQueue
 
 `ToyQueue` 有三个实现：
 
