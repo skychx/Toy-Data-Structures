@@ -2,14 +2,14 @@
  * @Author: skychx
  * @Date: 2021-02-04 21:26:18
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 22:40:35
+ * @LastEditTime: 2021-02-04 23:04:55
  * @FilePath: /Toy-Data-Structures/04-Queue/LoopQueue.ts
  */
 import { ToyQueue } from './ToyQueue';
 
 // 「循环队列」可以把 ArrayQueue 的 dequeue 时间复杂度降低到 O(1)
 export class LoopQueue<T> implements ToyQueue<T> {
-    private data: T[];
+    private data: Array<T | null>;
     private front: number;
     private tail: number;
     private size: number;
@@ -23,7 +23,7 @@ export class LoopQueue<T> implements ToyQueue<T> {
 
     // 动态修改容器大小
     private resize(newCapacity: number): void {
-        let newData: T[] = new Array(newCapacity + 1);
+        let newData: Array<T | null> = new Array(newCapacity + 1);
         
         // 这里做的原因是旧的已经满了的数组，里面会有个空位的
         // 通过取余运算可以得到正确的索引
@@ -80,7 +80,7 @@ export class LoopQueue<T> implements ToyQueue<T> {
         return res;
     }
 
-    getFront(): T {
+    getFront(): T | null {
         if(this.isEmpty()) {
             throw new Error('Queue is empty.');
         }
