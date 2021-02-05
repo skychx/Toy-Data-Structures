@@ -2,13 +2,13 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 18:13:14
+ * @LastEditTime: 2021-02-04 22:38:03
  * @FilePath: /Toy-Data-Structures/02-LinkedList/ToyLinkedList.ts
  */
 import { isEqual } from 'lodash';
 
 // 链表单节点
-class LinkedNode<T> {
+export class LinkedNode<T> {
     e: T | null;
     next: LinkedNode<T> | null;
 
