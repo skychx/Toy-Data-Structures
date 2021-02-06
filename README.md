@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-05 15:13:27
+ * @LastEditTime: 2021-02-06 21:48:18
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -108,3 +108,23 @@
 | getSize() | enqueue(e) | dequeue() | getFront() |      |
 | isEmpty() |            |           |            |      |
 
+<br />
+
+### 二分搜索树 ToyBST
+
+`ToyBST` 为二分搜索树的一个简单实现，包括**深度优先遍历**（前序/中序/后序遍历）和**广度优先遍历**（层序遍历）。
+
+- 深度优先遍历
+  - 利用**递归**实现前序/中序/后序遍历
+  - 借助「**栈**」实现非递归的前序遍历
+- 广度优先遍历
+  - 借助「**队列**」实现层序遍历
+
+#### API:
+
+| 基础      | 增          | 删          | 查           | 深度优先遍历   | 广度优先遍历   |
+| --------- | ---------- | ---------   | ----------  | ----------   | ----------   |
+| getSize() | add(e)     | removeMin() | contains(e) | preOrder()   | levelOrder() |
+| isEmpty() |            | removeMax() | minimum()   | preOrderNR() |              |
+|           |            | remove(e)   | maximum()   | inOrder()    |              |
+|           |            |             |             | postOrder()  |              |
