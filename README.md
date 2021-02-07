@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 21:04:51
+ * @LastEditTime: 2021-02-07 21:06:39
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -144,7 +144,7 @@
 
 | 基础       | 增         | 删        | 查         | 改   |
 | --------- | ---------- | --------- | ---------- | ---- |
-| getSize() | add(e)     | delete()  | has()      |      |
+| getSize() | add(e)     | delete(e) | has()      |      |
 | isEmpty() |            |           |            |      |
 
 <br />
