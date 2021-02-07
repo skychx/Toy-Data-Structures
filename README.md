@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-06 21:48:18
+ * @LastEditTime: 2021-02-07 21:04:51
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -110,7 +110,7 @@
 
 <br />
 
-### 二分搜索树 ToyBST
+### 05.二分搜索树 ToyBST
 
 `ToyBST` 为二分搜索树的一个简单实现，包括**深度优先遍历**（前序/中序/后序遍历）和**广度优先遍历**（层序遍历）。
 
@@ -128,3 +128,23 @@
 | isEmpty() |            | removeMax() | minimum()   | preOrderNR() |              |
 |           |            | remove(e)   | maximum()   | inOrder()    |              |
 |           |            |             |             | postOrder()  |              |
+
+<br />
+
+### 06.集合 ToySet
+
+`ToySet` 有两个实现：
+
+- **有序集合**：Set 中的元素都是有序排列的
+  - **BSTSet**：基于 BST 二分搜索树实现，`add` `has` `delete` 时间复杂度均为 `O(logn)`
+- **无序集合**：Set 中的元素都是无序排列的
+  - **LinkedListSet**：基于 LinkedLis 链表实现，`add` `has` `delete` 时间复杂度均为 `O(n)`
+
+#### API:
+
+| 基础       | 增         | 删        | 查         | 改   |
+| --------- | ---------- | --------- | ---------- | ---- |
+| getSize() | add(e)     | delete()  | has()      |      |
+| isEmpty() |            |           |            |      |
+
+<br />

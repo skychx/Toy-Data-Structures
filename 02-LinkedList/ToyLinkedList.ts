@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 22:38:03
+ * @LastEditTime: 2021-02-07 18:57:14
  * @FilePath: /Toy-Data-Structures/02-LinkedList/ToyLinkedList.ts
  */
 import { isEqual } from 'lodash';
@@ -97,6 +97,24 @@ export class ToyLinkedList<T> {
 
     removeLast(): T | null {
         return this.remove(this.size - 1);
+    }
+
+    removeElement(e: T): void {
+        let prev = this.dummyHead;
+
+        while (prev!.next !== null) {
+            if (isEqual(prev?.next.e, e)) {
+                break;
+            }
+            prev = prev!.next;
+        }
+
+        if(prev!.next !== null) {
+            let delNode = prev!.next;
+            prev!.next = delNode.next;
+            delNode.next = null;
+            this.size--;
+        }
     }
 
     /** 查 **/

@@ -2,11 +2,9 @@
  * @Author: skychx
  * @Date: 2021-02-06 18:13:27
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 17:46:22
+ * @LastEditTime: 2021-02-07 18:00:43
  * @FilePath: /Toy-Data-Structures/05-BinarySearchTree/ToyBST.ts
  */
-
-import { createLogicalOr } from "typescript";
 
 // 这里把 null 也看成树节点
 type Node<T> = TreeNode<T> | null;
