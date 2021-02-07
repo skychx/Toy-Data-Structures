@@ -2,9 +2,12 @@
  * @Author: skychx
  * @Date: 2021-02-06 18:13:27
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-06 21:46:41
+ * @LastEditTime: 2021-02-07 17:46:22
  * @FilePath: /Toy-Data-Structures/05-BinarySearchTree/ToyBST.ts
  */
+
+import { createLogicalOr } from "typescript";
+
 // 这里把 null 也看成树节点
 type Node<T> = TreeNode<T> | null;
 
@@ -164,6 +167,70 @@ export class ToyBST<T> {
 
         node!.right = this._removeMax(node!.right);
         return node;
+    }
+
+    // 删除元素为 e 的节点
+    remove(e: T): void {
+        this.root = this._remove(this.root, e);
+    }
+
+    // 删除掉以node为根的二分搜索树中值为e的节点, 递归算法
+    // 返回删除节点后新的二分搜索树的根
+    _remove(node: Node<T>, e: T): Node<T> {
+        if(node === null) {
+            return null;
+        }
+
+        if(e < node.e) {
+            node.left = this._remove(node.left, e);
+            return node;
+        } else if (e > node.e) {
+            node.right = this._remove(node.right, e);
+            return node;
+        } else { // e === node.e
+
+            // 左子树为空，直接用右子树替代 node 节点
+            if(node.left === null) {
+                let rightNode = node.right;
+                this.size--;
+
+                // 删除 node 节点
+                node.right = null;
+
+                return rightNode;
+            }
+
+            // 右子树为空，直接用左子树替代 node 节点
+            if (node.right === null) {
+                let leftNode = node.left;
+                this.size--;
+
+                // 删除 node 节点
+                node.left = null;
+
+                return leftNode;
+            }
+
+            // 左右子树均不为空【核心代码】
+
+            // 找到比 待删除节点「大」的「最小节点」（即待删除节点「右子树」的「最小节点」）
+            // 然后用这个节点替换待删除节点的位置
+            let successor = this._minimum(node.right);
+
+            // successor 接管 node 节点的左子树，接管删除「最小节点」后的 node 节点右子树
+            // 注意这里的 right left 赋值顺序不能调换，要不然会有循环引用
+            // 解释：因为此时 successor 和「最小节点」指向同一个引用，如果先执行 successor!.left = node.left，
+            //    这时候「最小节点」的 left 就会指向 node.left，导致数据结构错乱，如果这时候再执行 _removeMin(node.right)，
+            //    就会导致删除的是 node.left 里的最小节点，导致与目的不一致
+            successor!.right = this._removeMin(node.right); // 注意 _removeMin 中已经进行了 size-- 操作
+            successor!.left = node.left;
+
+            // 删除 node 节点
+            node.left = null;
+            node.right = null;
+
+            return successor;
+        }
     }
 
     /** 遍历 **/

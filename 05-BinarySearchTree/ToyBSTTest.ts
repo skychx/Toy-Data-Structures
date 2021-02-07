@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-06 18:00:14
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-06 21:46:10
+ * @LastEditTime: 2021-02-07 17:50:12
  * @FilePath: /Toy-Data-Structures/05-BinarySearchTree/ToyBSTTest.ts
  */
 import { ToyBST } from './ToyBST';
@@ -32,9 +32,16 @@ console.log(`\nBST 结构：\n${test}`);
 // console.log('\n层序遍历');
 // test.levelOrder();
 
-console.log('\n最大元素：', test.maximum());
-console.log('\n最小元素：', test.minimum());
-test.removeMin();
+// console.log('\n最大元素：', test.maximum());
+// console.log('\n最小元素：', test.minimum());
+// test.removeMin();
+// console.log(`\nBST 结构：\n${test}`);
+// test.removeMin();
+// console.log(`\nBST 结构：\n${test}`);
+
+test.remove(3);
 console.log(`\nBST 结构：\n${test}`);
-test.removeMin();
+test.remove(4);
+console.log(`\nBST 结构：\n${test}`);
+test.remove(6);
 console.log(`\nBST 结构：\n${test}`);
