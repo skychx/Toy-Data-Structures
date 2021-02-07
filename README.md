@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 22:50:12
+ * @LastEditTime: 2021-02-07 22:57:20
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -151,7 +151,7 @@
 
 ### 06.映射 ToyMap
 
-`ToySet` 有两个实现：
+`ToyMap` 有两个实现：
 
 - **有序映射**：Map 中的元素都是有序排列的（基于搜索树实现）
   - **BSTMap**：基于 BST 二分搜索树实现，`add` `get` `has` `delete` 时间复杂度均为 `O(logn)`
