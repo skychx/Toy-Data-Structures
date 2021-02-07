@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 18:57:14
+ * @LastEditTime: 2021-02-07 22:12:29
  * @FilePath: /Toy-Data-Structures/02-LinkedList/ToyLinkedList.ts
  */
 import { isEqual } from 'lodash';
@@ -103,7 +103,7 @@ export class ToyLinkedList<T> {
         let prev = this.dummyHead;
 
         while (prev!.next !== null) {
-            if (isEqual(prev?.next.e, e)) {
+            if (isEqual(prev!.next.e, e)) {
                 break;
             }
             prev = prev!.next;

@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 17:53:15
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 20:46:51
+ * @LastEditTime: 2021-02-07 22:18:50
  * @FilePath: /Toy-Data-Structures/06-Set/ToySetTest.ts
  */
 import fs from 'fs';
@@ -15,7 +15,7 @@ let jsSet = new Set();
 let test = new BSTSet<string>();
 let test2 = new LinkedListSet<string>();
 
-const pap = fs.readFileSync(path.join(__dirname, './txtFile/pride-and-prejudice.txt'));
+const pap = fs.readFileSync(path.join(__dirname, '../static/pride-and-prejudice.txt'));
 const papList = pap.toString().split(/\s+/);
 
 console.log(`\n总数据量：${papList.length}\n`);

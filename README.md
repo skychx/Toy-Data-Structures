@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 21:06:39
+ * @LastEditTime: 2021-02-07 22:50:12
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -135,10 +135,10 @@
 
 `ToySet` 有两个实现：
 
-- **有序集合**：Set 中的元素都是有序排列的
+- **有序集合**：Set 中的元素都是有序排列的（基于搜索树实现）
   - **BSTSet**：基于 BST 二分搜索树实现，`add` `has` `delete` 时间复杂度均为 `O(logn)`
 - **无序集合**：Set 中的元素都是无序排列的
-  - **LinkedListSet**：基于 LinkedLis 链表实现，`add` `has` `delete` 时间复杂度均为 `O(n)`
+  - **LinkedListSet**：基于 LinkedList 链表实现，`add` `has` `delete` 时间复杂度均为 `O(n)`
 
 #### API:
 
@@ -146,5 +146,23 @@
 | --------- | ---------- | --------- | ---------- | ---- |
 | getSize() | add(e)     | delete(e) | has()      |      |
 | isEmpty() |            |           |            |      |
+
+<br />
+
+### 06.映射 ToyMap
+
+`ToySet` 有两个实现：
+
+- **有序映射**：Map 中的元素都是有序排列的（基于搜索树实现）
+  - **BSTMap**：基于 BST 二分搜索树实现，`add` `get` `has` `delete` 时间复杂度均为 `O(logn)`
+- **无序映射**：Map 中的元素都是无序排列的
+  - **LinkedListMap**：基于 LinkedList 链表实现，`add` `get` `has` `delete` 时间复杂度均为 `O(n)`
+
+#### API:
+
+| 基础       | 增         | 删        | 查         | 改         |
+| --------- | ---------- | --------- | ---------- | --------- |
+| getSize() | add(k, v)  | delete(k) | get(k)     | get(k, v) |
+| isEmpty() |            |           | has(k)     |           |
 
 <br />
