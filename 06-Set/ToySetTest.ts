@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 17:53:15
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 22:18:50
+ * @LastEditTime: 2021-02-08 14:47:04
  * @FilePath: /Toy-Data-Structures/06-Set/ToySetTest.ts
  */
 import fs from 'fs';
@@ -10,6 +10,10 @@ import path from 'path';
 
 import { BSTSet } from './BSTSet';
 import { LinkedListSet } from './LinkedListSet';
+
+// 从耗时上看，
+// jsSet * 10 = BSTSet
+// BSTSet * 100 = LinkedListSet
 
 let jsSet = new Set();
 let test = new BSTSet<string>();

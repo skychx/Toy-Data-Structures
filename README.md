@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 22:57:20
+ * @LastEditTime: 2021-02-08 14:48:39
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -136,7 +136,7 @@
 `ToySet` 有两个实现：
 
 - **有序集合**：Set 中的元素都是有序排列的（基于搜索树实现）
-  - **BSTSet**：基于 BST 二分搜索树实现，`add` `has` `delete` 时间复杂度均为 `O(logn)`
+  - **BSTSet**：基于 BST 二分搜索树实现，`add` `has` `delete` 时间复杂度平均为 `O(logn)`，最坏情况下退化为链表，时间复杂度变为 `O(n)`
 - **无序集合**：Set 中的元素都是无序排列的
   - **LinkedListSet**：基于 LinkedList 链表实现，`add` `has` `delete` 时间复杂度均为 `O(n)`
 
@@ -154,7 +154,7 @@
 `ToyMap` 有两个实现：
 
 - **有序映射**：Map 中的元素都是有序排列的（基于搜索树实现）
-  - **BSTMap**：基于 BST 二分搜索树实现，`add` `get` `has` `delete` 时间复杂度均为 `O(logn)`
+  - **BSTMap**：基于 BST 二分搜索树实现，`add` `get` `has` `delete` 时间复杂度平均为 `O(logn)`，最坏情况下退化为链表，时间复杂度变为 `O(n)`
 - **无序映射**：Map 中的元素都是无序排列的
   - **LinkedListMap**：基于 LinkedList 链表实现，`add` `get` `has` `delete` 时间复杂度均为 `O(n)`
 
