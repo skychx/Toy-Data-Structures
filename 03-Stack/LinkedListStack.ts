@@ -2,37 +2,37 @@
  * @Author: skychx
  * @Date: 2021-02-04 17:05:11
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 18:19:38
+ * @LastEditTime: 2021-02-08 15:48:40
  * @FilePath: /Toy-Data-Structures/03-Stack/LinkedListStack.ts
  */
 import { ToyStack } from './ToyStack';
 import { ToyLinkedList } from '../02-LinkedList/ToyLinkedList';
 
 export class LinkedListStack<T> implements ToyStack<T> {
-    private list: ToyLinkedList<T> | null;
+    private list: ToyLinkedList<T>;
 
     constructor() {
         this.list = new ToyLinkedList<T>();
     }
 
     getSize(): number {
-        return this.list!.getSize();
+        return this.list.getSize();
     };
 
     isEmpty(): boolean {
-        return this.list!.isEmpty();
+        return this.list.isEmpty();
     };
 
     push(e: T): void {
-        this.list!.addFirst(e);
+        this.list.addFirst(e);
     };
 
     pop(): T | null {
-        return this.list!.removeFirst();
+        return this.list.removeFirst();
     };
 
     peek(): T | null {
-        return this.list!.getFirst();
+        return this.list.getFirst();
     };
 
     toString(): string {

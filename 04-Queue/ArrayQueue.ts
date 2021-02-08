@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-04 21:01:59
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 22:40:48
+ * @LastEditTime: 2021-02-08 15:51:27
  * @FilePath: /Toy-Data-Structures/04-Queue/ArrayQueue.ts
  */
 import { ToyQueue } from './ToyQueue';
@@ -27,11 +27,11 @@ export class ArrayQueue<T> implements ToyQueue<T> {
         this.array.push(e);
     };
 
-    dequeue(): T | null {
+    dequeue(): T {
         return this.array.shift();
     };
 
-    getFront(): T | null {
+    getFront(): T {
         return this.array.getFirst();
     };
 
