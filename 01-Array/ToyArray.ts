@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 18:13:02
+ * @LastEditTime: 2021-02-09 21:52:27
  * @FilePath: /Toy-Data-Structures/01-Array/ToyArray.ts
  */
 import { isEqual } from 'lodash';
@@ -12,9 +12,14 @@ export class ToyArray<T> {
     private size: number;
     private data: T[];
 
-    constructor(capacity: number = 10) {
-        this.data = new Array(capacity);
-        this.size = 0;
+    constructor(params: number | T[]) {
+        if (Array.isArray(params)) {
+            this.data = params;
+            this.size = params.length;
+        } else {
+            this.data = new Array(params ?? 10);
+            this.size = 0;
+        }
     }
 
     // 将数组空间的容量变成 newCapacity 大小
@@ -162,6 +167,15 @@ export class ToyArray<T> {
             throw new Error('Set failed. Index is illegal.');
         }
         this.data[index] = e;
+    }
+
+    swap(i: number, j: number): void {
+        if (i < 0 || i > this.size || j < 0 || j > this.size) {
+            throw new Error('Index is illegal.');
+        }
+        let template: T = this.data[i];
+        this.data[i] = this.data[j];
+        this.data[j] = template;
     }
 
     /** 格式化 **/
