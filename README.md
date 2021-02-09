@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-08 14:48:39
+ * @LastEditTime: 2021-02-09 22:37:09
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -46,7 +46,7 @@
 
 ### 01.数组 ToyArray
 
-基于 JavaScript 的 `Array` 实现。当然没有原数组强大（JS 数组里面啥都能塞，而且有 40+ 的 API），只实现了基础的「增删查改」功能。
+基于 JavaScript 的 `Array` 实现。当然没有原数组强大（JS 数组里面啥都能塞，而且有 30+ 的 API），只实现了基础的「增删查改」功能。
 
 #### API:
 
@@ -149,7 +149,7 @@
 
 <br />
 
-### 06.映射 ToyMap
+### 07.映射 ToyMap
 
 `ToyMap` 有两个实现：
 
@@ -164,5 +164,35 @@
 | --------- | ---------- | --------- | ---------- | --------- |
 | getSize() | add(k, v)  | delete(k) | get(k)     | get(k, v) |
 | isEmpty() |            |           | has(k)     |           |
+
+<br />
+
+### 08.堆 ToyHeap
+
+使用**完全二叉树**表示一个堆（二叉堆），这里实现了最大堆 `ToyMaxHeap` 和最小堆 `ToyMinHeap`。其实两者只有数值比较处相反，其它的实现逻辑完全一致。
+
+
+#### API:
+
+| 基础       | 增         | 删                        | 查                   | 改         |
+| --------- | ---------- | ---------                 | ---------           | ---------  |
+| getSize() | add(e)     | extractMax()/extractMin() | findMax()/findMin() | replace(e) |
+| isEmpty() |            |                           | has(k)              |            |
+
+<br />
+
+### 09.优先队列 ToyPriorityQueue
+
+本质上还是一个队列，但是出队时机和入队时机无关，需要**动态**的选择优先级最高的任务出队。
+
+本结构底层利用 `ToyMaxHeap` 实现。
+
+
+#### API:
+
+| 基础       | 增         | 删        | 查          | 改   |
+| --------- | ---------- | --------- | ---------- | ---- |
+| getSize() | enqueue(e) | dequeue() | getFront() |      |
+| isEmpty() |            |           |            |      |
 
 <br />
