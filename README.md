@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-09 22:37:09
+ * @LastEditTime: 2021-02-10 17:50:16
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -174,10 +174,10 @@
 
 #### API:
 
-| 基础       | 增         | 删                        | 查                   | 改         |
-| --------- | ---------- | ---------                 | ---------           | ---------  |
-| getSize() | add(e)     | extractMax()/extractMin() | findMax()/findMin() | replace(e) |
-| isEmpty() |            |                           | has(k)              |            |
+| 基础       | 增         | 删        | 查         | 改         |
+| --------- | ---------- | --------- | --------- | ---------  |
+| getSize() | push(e)    | pop()     | peek()    | replace(e) |
+| isEmpty() |            |           | has(k)    |            |
 
 <br />
 

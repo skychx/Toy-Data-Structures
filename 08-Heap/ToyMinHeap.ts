@@ -2,18 +2,19 @@
  * @Author: skychx
  * @Date: 2021-02-08 16:25:17
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-09 22:32:42
+ * @LastEditTime: 2021-02-10 17:48:24
  * @FilePath: /Toy-Data-Structures/08-Heap/ToyMinHeap.ts
  */
+import { ToyHeap } from './ToyHeap';
 import { ToyArray } from '../01-Array/ToyArray';
 
-export class ToyMinHeap<T> {
+export class ToyMinHeap<T> implements ToyHeap<T> {
     private data: ToyArray<T>;
 
     constructor(params: number | T[]) {
+        // 如果传入数组，直接转为堆（堆化操作）
         if (Array.isArray(params)) {
             this.data = new ToyArray<T>(params);
-            // 传入数组，直接转为堆
             if(params.length !== 1) {
                 for (let i = this.parent(params.length - 1); i >= 0 ; i--) {
                     this.siftDown(i);
@@ -53,7 +54,7 @@ export class ToyMinHeap<T> {
 
     /** 增 **/
 
-    add(e: T): void {
+    push(e: T): void {
         // 插入后再整理堆的顺序
         this.data.push(e);
         this.siftUp(this.data.getSize() - 1);
@@ -73,9 +74,9 @@ export class ToyMinHeap<T> {
     /** 查 **/
 
     // 寻找堆中的最大的元素
-    findMin(): T {
+    peek(): T {
         if(this.data.isEmpty()) {
-            throw new Error('Can not findMax when heap is empty.');
+            throw new Error('Can not peek when heap is empty.');
         }
 
         // 最大元素就是数组的第一个元素
@@ -85,8 +86,8 @@ export class ToyMinHeap<T> {
     /** 删 **/
 
     // 移除最大元素
-    extractMin(): T {
-        let res = this.findMin();
+    pop(): T {
+        let res = this.peek();
 
         this.data.swap(0, this.data.getSize() - 1);
         this.data.pop();
@@ -125,7 +126,7 @@ export class ToyMinHeap<T> {
 
     // 取出堆中的最大元素，并且替换成元素 e
     replace(e: T): T {
-        let res = this.findMin();
+        let res = this.peek();
 
         this.data.set(0, e);
         this.siftDown(0);

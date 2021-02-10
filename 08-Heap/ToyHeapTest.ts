@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-09 20:20:41
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-09 21:58:15
+ * @LastEditTime: 2021-02-10 17:48:35
  * @FilePath: /Toy-Data-Structures/08-Heap/ToyHeapTest.ts
  */
 import { ToyMaxHeap } from './ToyMaxHeap';
@@ -18,7 +18,7 @@ function testHeapify(testData: number[], isHeapify: boolean): void {
     } else {
         maxHeap = new ToyMaxHeap<number>(testData.length);
         for (let i = 0; i < testData.length; i++) {
-            maxHeap.add(testData[i]);
+            maxHeap.push(testData[i]);
         }
     }
 
@@ -26,7 +26,7 @@ function testHeapify(testData: number[], isHeapify: boolean): void {
 
     let arr = [];
     for (let i = 0; i < testData.length; i++) {
-        arr.push(maxHeap.extractMax());
+        arr.push(maxHeap.pop());
     }
 
     for (let i = 0; i < testData.length; i++) {

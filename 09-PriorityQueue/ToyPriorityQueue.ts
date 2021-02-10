@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-04 20:39:39
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-09 22:09:11
+ * @LastEditTime: 2021-02-10 17:49:09
  * @FilePath: /Toy-Data-Structures/09-PriorityQueue/ToyPriorityQueue.ts
  */
 // 优先队列本质上也是队列，接口都是一致的
@@ -25,14 +25,14 @@ export class ToyPriorityQueue<T> implements ToyQueue<T> {
     }
 
     getFront(): T {
-        return this.maxHeap.findMax();
+        return this.maxHeap.peek();
     }
 
     enqueue(e: T): void {
-        this.maxHeap.add(e);
+        this.maxHeap.push(e);
     }
 
     dequeue(): T {
-        return this.maxHeap.extractMax();
+        return this.maxHeap.pop();
     }
 }
