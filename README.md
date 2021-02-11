@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-11 12:04:22
+ * @LastEditTime: 2021-02-11 15:27:06
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -185,7 +185,9 @@
 
 本质上还是一个队列，但是出队时机和入队时机无关，需要**动态**的选择优先级最高的任务出队。
 
-本结构底层利用 `ToyMaxHeap` 实现。
+优先队列的**最优方案**就是用最大堆 `ToyMaxHeap` 实现，这时候入队出队的时间复杂度稳定为 `O(logn)`。
+
+数组实现的优先队列内部是无序的，所以出队操作需要遍历整个数组，时间复杂度为 `O(n)`。
 
 
 #### API:
