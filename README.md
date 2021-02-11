@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-10 17:50:16
+ * @LastEditTime: 2021-02-11 12:04:22
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -144,7 +144,7 @@
 
 | 基础       | 增         | 删        | 查         | 改   |
 | --------- | ---------- | --------- | ---------- | ---- |
-| getSize() | add(e)     | delete(e) | has()      |      |
+| getSize() | add(e)     | delete(e) | has(e)     |      |
 | isEmpty() |            |           |            |      |
 
 <br />
@@ -154,15 +154,15 @@
 `ToyMap` 有两个实现：
 
 - **有序映射**：Map 中的元素都是有序排列的（基于搜索树实现）
-  - **BSTMap**：基于 BST 二分搜索树实现，`add` `get` `has` `delete` 时间复杂度平均为 `O(logn)`，最坏情况下退化为链表，时间复杂度变为 `O(n)`
+  - **BSTMap**：基于 BST 二分搜索树实现，`add` `get` `has` `delete` `set` 时间复杂度平均为 `O(logn)`，最坏情况下退化为链表，时间复杂度变为 `O(n)`
 - **无序映射**：Map 中的元素都是无序排列的
-  - **LinkedListMap**：基于 LinkedList 链表实现，`add` `get` `has` `delete` 时间复杂度均为 `O(n)`
+  - **LinkedListMap**：基于 LinkedList 链表实现，`add` `get` `has` `delete` `set` 时间复杂度均为 `O(n)`
 
 #### API:
 
 | 基础       | 增         | 删        | 查         | 改         |
 | --------- | ---------- | --------- | ---------- | --------- |
-| getSize() | add(k, v)  | delete(k) | get(k)     | get(k, v) |
+| getSize() | add(k, v)  | delete(k) | get(k)     | set(k, v) |
 | isEmpty() |            |           | has(k)     |           |
 
 <br />
