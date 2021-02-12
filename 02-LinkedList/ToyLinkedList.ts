@@ -2,14 +2,14 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-12 17:56:16
+ * @LastEditTime: 2021-02-12 18:08:23
  * @FilePath: /Toy-Data-Structures/02-LinkedList/ToyLinkedList.ts
  */
 import { isEqual } from 'lodash';
 
 // 这里把 null 也看成树节点
-type Node<T> = LinkedNode<T> | null;
-type E<T> = T | null;
+export type Node<T> = LinkedNode<T> | null;
+export type E<T> = T | null;
 
 // 链表单节点
 export class LinkedNode<T> {

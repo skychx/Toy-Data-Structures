@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-11 15:29:26
+ * @LastEditTime: 2021-02-12 18:07:54
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -99,7 +99,7 @@
 
 - 基于 `ToyArray` 实现的 `ArrayQueue`，实现最为简单，缺点是 `dequeue()` 时间复杂度为 `O(n)`
 - `LoopQueue`，底层依旧是数组，但是把 `dequeue()` 时间复杂度优化为 `O(1)`
-- `LinkedListQueue`，基于双链表实现的队列
+- `LinkedListQueue`，基于链表实现的队列
 
 #### API:
 

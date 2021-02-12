@@ -2,17 +2,17 @@
  * @Author: skychx
  * @Date: 2021-02-04 21:25:22
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-05 20:55:04
+ * @LastEditTime: 2021-02-12 18:09:31
  * @FilePath: /Toy-Data-Structures/04-Queue/LinkedListQueue.ts
  */
 import { ToyQueue } from './ToyQueue';
-import { LinkedNode } from '../02-LinkedList/ToyLinkedList';
+import { Node, E, LinkedNode } from '../02-LinkedList/ToyLinkedList';
 
-// 用双向链表实现队列
+// 用含有头节点尾节点的链表实现队列
 // 链表尾 enqueue，链表头 dequeue
 export class LinkedListQueue<T> implements ToyQueue<T> {
-    private head: LinkedNode<T> | null;
-    private tail: LinkedNode<T> | null;
+    private head: Node<T>;
+    private tail: Node<T>;
     private size: number;
 
     constructor() {
@@ -41,7 +41,7 @@ export class LinkedListQueue<T> implements ToyQueue<T> {
         this.size++;
     }
 
-    dequeue(): T | null {
+    dequeue(): E<T> {
         if(this.isEmpty()) {
             throw new Error('Cannot dequeue from an empty queue.');
         }
@@ -58,7 +58,7 @@ export class LinkedListQueue<T> implements ToyQueue<T> {
         return retNode.e;
     }
 
-    getFront(): T | null {
+    getFront(): E<T> {
         if (this.isEmpty()) {
             throw new Error('Queue is empty.');
         }
