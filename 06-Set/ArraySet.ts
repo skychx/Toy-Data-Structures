@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 17:54:22
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-11 11:42:16
+ * @LastEditTime: 2021-02-12 16:48:38
  * @FilePath: /Toy-Data-Structures/06-Set/ArraySet.ts
  */
 import { ToySet } from './ToySet';
@@ -12,7 +12,7 @@ import { ToyArray } from '../01-Array/ToyArray';
 export class ArraySet<T> implements ToySet<T> {
     private list: ToyArray<T>;
     constructor() {
-        this.list = new ToyArray<T>(10);
+        this.list = new ToyArray<T>();
     }
 
     getSize(): number {

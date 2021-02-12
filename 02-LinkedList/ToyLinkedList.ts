@@ -2,17 +2,21 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-07 22:12:29
+ * @LastEditTime: 2021-02-12 17:56:16
  * @FilePath: /Toy-Data-Structures/02-LinkedList/ToyLinkedList.ts
  */
 import { isEqual } from 'lodash';
 
+// 这里把 null 也看成树节点
+type Node<T> = LinkedNode<T> | null;
+type E<T> = T | null;
+
 // 链表单节点
 export class LinkedNode<T> {
-    e: T | null;
-    next: LinkedNode<T> | null;
+    e: E<T>;
+    next: Node<T>;
 
-    constructor(e?: T, next?: LinkedNode<T> | null) {
+    constructor(e?: T, next?: Node<T>) {
         this.e = e ?? null;
         this.next = next ?? null;
     }
@@ -23,11 +27,11 @@ export class LinkedNode<T> {
 }
 
 export class ToyLinkedList<T> {
-    private dummyHead: LinkedNode<T> | null;
+    private dummyHead: Node<T>;
     private size: number;
 
     constructor() {
-        // dummyHead：虚拟头节点
+        // dummyHead：虚拟头节点、表头
         this.dummyHead = new LinkedNode();
         this.size = 0;
     }
@@ -72,7 +76,7 @@ export class ToyLinkedList<T> {
 
     /** 删 **/
 
-    remove(index: number): T | null {
+    remove(index: number): E<T> {
         if (index < 0 || index >= this.size) {
             throw new Error('Remove failed. Illegal index.');
         }
@@ -91,11 +95,11 @@ export class ToyLinkedList<T> {
         return retNode!.e;
     }
 
-    removeFirst(): T | null {
+    removeFirst(): E<T> {
         return this.remove(0);
     }
 
-    removeLast(): T | null {
+    removeLast(): E<T> {
         return this.remove(this.size - 1);
     }
 
@@ -119,7 +123,7 @@ export class ToyLinkedList<T> {
 
     /** 查 **/
 
-    get(index: number): T | null {
+    get(index: number): E<T> {
         if (index < 0 || index >= this.size) {
             throw new Error('Get failed. Illegal index.');
         }
@@ -132,15 +136,16 @@ export class ToyLinkedList<T> {
         return cur!.e;
     }
 
-    getFirst(): T | null {
+    getFirst(): E<T> {
         return this.get(0);
     }
 
-    getLast(): T | null {
+    getLast(): E<T> {
         return this.get(this.size - 1);
     }
 
     contains(e: T): boolean {
+        // 从第一个元素开始遍历
         let cur = this.dummyHead!.next;
         while (cur !== null) {
             if (isEqual(cur.e, e)) {
@@ -153,6 +158,7 @@ export class ToyLinkedList<T> {
 
     /** 改 **/
 
+    // 这个操作在链表里并不常见
     set(index: number, e: T): void {
         if (index < 0 || index >= this.size) {
             throw new Error('Set failed. Illegal index.');

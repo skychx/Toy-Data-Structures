@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-09 21:52:27
+ * @LastEditTime: 2021-02-12 16:48:08
  * @FilePath: /Toy-Data-Structures/01-Array/ToyArray.ts
  */
 import { isEqual } from 'lodash';
@@ -12,7 +12,7 @@ export class ToyArray<T> {
     private size: number;
     private data: T[];
 
-    constructor(params: number | T[]) {
+    constructor(params?: number | T[]) {
         if (Array.isArray(params)) {
             this.data = params;
             this.size = params.length;

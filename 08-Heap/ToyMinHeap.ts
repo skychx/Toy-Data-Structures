@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-08 16:25:17
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-10 17:48:24
+ * @LastEditTime: 2021-02-12 16:49:14
  * @FilePath: /Toy-Data-Structures/08-Heap/ToyMinHeap.ts
  */
 import { ToyHeap } from './ToyHeap';
@@ -21,7 +21,7 @@ export class ToyMinHeap<T> implements ToyHeap<T> {
                 }
             }
         } else {
-            this.data = new ToyArray<T>(params ?? 10);
+            this.data = new ToyArray<T>();
         }
     }
 
