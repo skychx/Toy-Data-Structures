@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-12 18:07:54
+ * @LastEditTime: 2021-02-16 15:47:45
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -195,5 +195,22 @@
 | --------- | ---------- | --------- | ---------- | ---- |
 | getSize() | enqueue(e) | dequeue() | getFront() |      |
 | isEmpty() |            |           |            |      |
+
+<br />
+
+
+### 10.线段树 ToySegmentTree
+
+线段树专注于研究**区间**问题，把各个区间的值记录为一棵树，然后当成一颗允许叶子节点为 null 的「满二叉树」存储到数组里。
+
+优点是**更新/查询**操作的时间复杂度都可以优化到 `O(logn)`，缺点是会浪费不少存储空间（极限情况下有一半的空间都会浪费）。
+
+
+#### API:
+
+| 基础       |  增  |  删  | 查           | 改            |
+| --------- | ---- | ---- | ----------  | ------------  |
+| getSize() |      |      | get(index)  | set(index, e) |
+|           |      |      | query(l, r) |               |
 
 <br />
