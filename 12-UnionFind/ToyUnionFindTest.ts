@@ -8,10 +8,10 @@
 import { ToyUnionFind } from './ToyUnionFind';
 import { QuickFindUF } from './QuickFindUF';
 import { QuickUnionUF } from './QuickUnionUF';
-import { QuickUnionUF2 } from './QuickUnionUF2';
-import { QuickUnionUF3 } from './QuickUnionUF3';
-import { QuickUnionUFPC } from './QuickUnionUFPC';
-import { QuickUnionUFPC2 } from './QuickUnionUFPC2';
+import { UnionBySizeUF } from './UnionBySizeUF';
+import { UnionByHeightUF } from './UnionByHeightUF';
+import { PathCompressionUF } from './PathCompressionUF';
+import { PathCompressionUF2 } from './PathCompressionUF2';
 
 function testUF(uf: ToyUnionFind, m: number, name: string) {
     const size = uf.getSize();
@@ -54,28 +54,28 @@ const m    = 10000000;
 // m    = 10000000;
 // Union time: 2.973s
 // Find time:  2.875s
-const uf3 = new QuickUnionUF2(size);
-testUF(uf3, m, 'QuickUnionUF2');
+const uf3 = new UnionBySizeUF(size);
+testUF(uf3, m, 'UnionBySizeUF');
 
 // size = 10000000;
 // m    = 10000000;
 // Union time: 3.018s
 // Find time:  3.178s
-const uf4 = new QuickUnionUF3(size);
-testUF(uf4, m, 'QuickUnionUF3');
+const uf4 = new UnionByHeightUF(size);
+testUF(uf4, m, 'UnionByHeightUF');
 
 // size = 10000000;
 // m    = 10000000;
 // Union time: 2.837s
 // Find time:  1.786s
-const uf5 = new QuickUnionUFPC(size);
-testUF(uf5, m, 'QuickUnionUFPC');
+const uf5 = new PathCompressionUF(size);
+testUF(uf5, m, 'PathCompressionUF');
 
 // size = 10000000;
 // m    = 10000000;
 // Union time: 3.463s
 // Find time:  2.052s
-// QuickUnionUFPC2 内部使用了递归，相对来说会比 QuickUnionUFPC 的循环慢一点儿
-const uf6 = new QuickUnionUFPC2(size);
-testUF(uf6, m, 'QuickUnionUFPC2');
+// PathCompressionUF2 内部使用了递归，相对来说会比 PathCompressionUF 的循环慢一点儿
+const uf6 = new PathCompressionUF2(size);
+testUF(uf6, m, 'PathCompressionUF2');
 

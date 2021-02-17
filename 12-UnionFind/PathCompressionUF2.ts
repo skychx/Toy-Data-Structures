@@ -2,17 +2,21 @@
  * @Author: skychx
  * @Date: 2021-02-16 18:56:04
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-17 14:16:41
- * @FilePath: /Toy-Data-Structures/12-UnionFind/QuickUnionUF3.ts
+ * @LastEditTime: 2021-02-17 15:18:48
+ * @FilePath: /Toy-Data-Structures/12-UnionFind/QuickUnionUFPC2.ts
  */
 import { ToyUnionFind } from './ToyUnionFind';
 
 // 考虑 QuickUnionUF 有可能退化为链表，这里需要减小树的高度
-// QuickUnionUF2 是基于集合中元素个数优化的
-// QuickUnionUF3 基于树的层数优化
-export class QuickUnionUF3 implements ToyUnionFind {
+// UnionBySizeUF 是基于集合中元素个数优化的
+// UnionByHeightUF 基于树的层数优化
+// PathCompressionUF 通过路径压缩（Path Compression）进一步降低树的高度
+export class PathCompressionUF2 implements ToyUnionFind {
+    // rank[i]表示以i为根的集合所表示的树的层数
+    // 在后续的代码中, 我们并不会维护rank的语意, 也就是rank的值在路径压缩的过程中, 有可能不在是树的层数值
+    // 这也是我们的rank不叫height或者depth的原因, 他只是作为比较的一个标准
+    private rank: number[];
     private parent: number[]; // parent[i] 表示第一个元素所指向的父节点
-    private rank: number[]; //   rank[i] 表示以 i 为根的集合所表示的树的层数
 
     constructor(size: number) {
         this.parent = new Array(size);
@@ -63,12 +67,9 @@ export class QuickUnionUF3 implements ToyUnionFind {
             throw new Error('p is out of bound.');
         }
 
-        // 不断去查询自己的父亲节点, 直到到达根节点
-        // 根节点的特点: parent[p] === p
-        while (p !== this.parent[p]) {
-            p = this.parent[p];
-        }
-
-        return p;
+        // path compression 2, 递归算法
+        if (p !== this.parent[p])
+            this.parent[p] = this.find(this.parent[p]);
+        return this.parent[p];
     }
 }
