@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-16 15:47:45
+ * @LastEditTime: 2021-02-17 14:58:55
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -201,7 +201,7 @@
 
 ### 10.线段树 ToySegmentTree
 
-线段树专注于研究**区间**问题，把各个区间的值记录为一棵树，然后当成一颗允许叶子节点为 null 的「满二叉树」存储到数组里。
+线段树专注于研究**区间**问题，把各个区间的值记录为一棵树，然后当成一颗允许叶子节点为 null 的「满二叉树」存储到数组里。线段树在算法竞赛里比较常见，日常运用比较少。
 
 优点是**更新/查询**操作的时间复杂度都可以优化到 `O(logn)`，缺点是会浪费不少存储空间（极限情况下有一半的空间都会浪费）。
 
@@ -212,5 +212,31 @@
 | --------- | ---- | ---- | ----------  | ------------  |
 | getSize() |      |      | get(index)  | set(index, e) |
 |           |      |      | query(l, r) |               |
+
+<br />
+
+
+### 12.并查集 ToyUnionFind
+
+并查集是一个非常**有意思**的数据结构，可以合并/查找任意两个元素的集合关系。比较典型的运用有：
+
+- 判断一个大家族里任意两个人是否为亲戚
+- 社交网络中任意两人是否为好友关系
+
+本小节有几个经典实现：
+
+- **QuickFindUF**: Quick Find 的并查集实现，查的时间复杂度为 O(1)，并的时间复杂度为 O(n)
+- **QuickUnionUF**: Quick Union 的最简单实现，并查的时间复杂度均为 O(h)，h 为树的高度
+- **QuickUnionUF2**: 考虑 QuickUnionUF 中的树有可能退化为链表，这里需要减小树的高度，通过维护一个 size 数组，将元素个数少的集合合并到元素个数多的集合上
+- **QuickUnionUF3**: 考虑 QuickUnionUF 中的树有可能退化为链表，这里需要减小树的高度，通过维护一个 rank 数组，将 rank 低的集合合并到 rank 高的集合上（这里的 rank 指各个树的高度）
+- **QuickUnionUFPC**: 通过路径压缩（Path Compression）进一步降低树的高度
+- **QuickUnionUFPC2**: 通过路径压缩（Path Compression）进一步降低树的高度，这个版本是递归实现
+
+
+#### API:
+
+| 基础       | 并                  | 查                |
+| --------- | ------------------  | ----------------  |
+| getSize() | unionElements(p, q) | isConnected(p, e) |
 
 <br />
