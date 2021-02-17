@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-17 15:15:33
+ * @LastEditTime: 2021-02-17 16:43:40
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -212,6 +212,20 @@
 | --------- | ---- | ---- | ----------  | ------------  |
 | getSize() |      |      | get(index)  | set(index, e) |
 |           |      |      | query(l, r) |               |
+
+<br />
+
+### 11.字典树/前缀树 ToyTrie
+
+顾名思义，Trie 是专门为**字典查询**这个场景设计的高级数据结构，优点就是时间复杂度可以控制在 `O(m)`，m 是字符串的长度；缺点就是空间浪费了不少（主要用来存储指针了）。
+
+
+#### API:
+
+| 基础       |  增       |  删          | 查                  | 改   |
+| --------- | --------- | ------------ | ------------------ | ---- |
+| getSize() | add(word) | remove(word) | has(word)          |      |
+|           |           |              | startswith(prefix) |      |
 
 <br />
 
