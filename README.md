@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-17 16:43:40
+ * @LastEditTime: 2021-02-18 22:29:51
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -232,7 +232,7 @@
 
 ### 12.并查集 ToyUnionFind
 
-并查集是一个非常**有意思**的数据结构，可以合并/查找任意两个元素的集合关系。比较典型的运用有：
+并查集是一个非常**有意思**的数据结构，可以合并/查找任意两个不相交元素的集合关系。比较典型的运用有：
 
 - 判断一个大家族里任意两个人是否为亲戚
 - 社交网络中任意两人是否为好友关系
