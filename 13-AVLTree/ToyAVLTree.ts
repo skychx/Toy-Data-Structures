@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 21:13:20
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-20 22:08:59
+ * @LastEditTime: 2021-02-20 22:37:44
  * @FilePath: /Toy-Data-Structures/13-AVLTree/ToyAVLTree.ts
  */
 // 这里把 null 也看成树节点
@@ -13,12 +13,14 @@ class TreeNode<K, V> {
     value: V;
     left: Node<K, V>;
     right: Node<K, V>;
+    height: number;
 
     constructor(key: K, value: V) {
         this.key = key;
         this.value = value;
         this.left = null;
         this.right = null;
+        this.height = 1;
     }
 
     toString(): string {
@@ -43,13 +45,73 @@ export class ToyAVLTree<K, V> {
         return this.size === 0;
     }
 
+    // 判断该二叉树是否是一棵二分搜索树
+    isBST(): boolean {
+        let keys: K[] = [];
+        this.inOrder(this.root, keys);
+
+        for (let i = 1; i < keys.length ; i++) {
+            if (keys[i - 1] > keys[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // 判断该二叉树是否是一棵平衡二叉树
+    isBalanced(): boolean {
+        return this._isBalanced(this.root);
+    }
+
+    // 判断以 Node 为根的二叉树是否是一棵平衡二叉树，递归算法
+    private _isBalanced(node: Node<K, V>): boolean {
+        if(node === null) {
+            return true;
+        }
+
+        let balanceFactor: number = this.getBalanceFactor(node);
+        if (Math.abs(balanceFactor) > 1) {
+            return false;
+        }
+
+        return this._isBalanced(node.left) && this._isBalanced(node.right);
+    }
+
+    // 中序遍历
+    private inOrder(node: Node<K, V>, keys: K[]) {
+        if(node === null) {
+            return;
+        }
+
+        this.inOrder(node.left, keys);
+        keys.push(node.key);
+        this.inOrder(node.left, keys);
+    }
+
+    // 获得 node 节点的高度
+    private getHeight(node: Node<K, V>): number {
+        if(node === null) {
+            return 0;
+        }
+        return node.height;
+    }
+
+    // 获得节点 node 的平衡因子
+    private getBalanceFactor(node: Node<K, V>): number {
+        if (node === null) {
+            return 0;
+        }
+        return this.getHeight(node.left) - this.getHeight(node.right);
+    }
+
     /** 增 **/
 
     add(key: K, value: V): void {
         this.root = this._add(this.root, key, value);
     }
 
-    // 向以node为根的二分搜索树中插入元素e，递归算法
+    // 向以 node 为根的二分搜索树中插入元素 e，递归算法
     private _add(node: Node<K, V>, key: K, value: V): Node<K, V> {
         if (node === null) {
             this.size++;
@@ -62,6 +124,15 @@ export class ToyAVLTree<K, V> {
             node.right = this._add(node.right, key, value);
         } else {
             node.value = value;
+        }
+
+        // 更新 height
+        node.height = 1 + Math.max(this.getHeight(node.left), this.getHeight(node.right));
+
+        // 计算平衡因子
+        let balanceFactor: number = this.getBalanceFactor(node);
+        if (Math.abs(balanceFactor) > 1) {
+            // console.log('unbalanced : ' + node.key + ' ' + balanceFactor);
         }
 
         return node;
