@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-18 22:29:51
+ * @LastEditTime: 2021-02-18 22:50:11
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -251,6 +251,6 @@
 
 | 基础       | 并                  | 查                |
 | --------- | ------------------  | ----------------  |
-| getSize() | unionElements(p, q) | isConnected(p, e) |
+| getSize() | unionElements(p, q) | isConnected(p, q) |
 
 <br />
