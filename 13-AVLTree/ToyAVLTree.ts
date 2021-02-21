@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 21:13:20
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-21 22:15:05
+ * @LastEditTime: 2021-02-21 23:04:52
  * @FilePath: /Toy-Data-Structures/13-AVLTree/ToyAVLTree.ts
  */
 // 这里把 null 也看成树节点
@@ -86,7 +86,7 @@ export class ToyAVLTree<K, V> {
 
         this._inOrder(node.left, keys);
         keys.push(node.key);
-        this._inOrder(node.left, keys);
+        this._inOrder(node.right, keys);
     }
 
     // 获得 node 节点的高度
