@@ -28,7 +28,7 @@ class TreeNode<K, V> {
     }
 }
 
-export class BSTMap<K, V> implements ToyMap<K, V>  {
+export class BSTMap<K, V> implements ToyMap<K, V> {
     root: Node<K, V>;
     size: number;
 
