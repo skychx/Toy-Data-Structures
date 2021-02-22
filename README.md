@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-22 09:10:38
+ * @LastEditTime: 2021-02-22 20:43:21
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -137,6 +137,7 @@
 
 - **有序集合**：Set 中的元素都是有序排列的（基于搜索树实现）
   - **BSTSet**：基于 BST 二分搜索树实现，`add` `has` `delete` 时间复杂度平均为 `O(logn)`，最坏情况下退化为链表，时间复杂度变为 `O(n)`
+  - **AVLSet**：基于 AVL Tree 实现，时间复杂度稳定为 `O(logn)`，根据 AVL 特性，不会退化为链表。
 - **无序集合**：Set 中的元素都是无序排列的
   - **LinkedListSet**：基于 LinkedList 链表实现，`add` `has` `delete` 时间复杂度均为 `O(n)`
 
