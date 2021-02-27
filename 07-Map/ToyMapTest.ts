@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 17:53:23
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-27 13:10:55
+ * @LastEditTime: 2021-02-27 20:57:06
  * @FilePath: /Toy-Data-Structures/07-Map/ToyMapTest.ts
  */
 import fs from 'fs';
@@ -11,6 +11,7 @@ import path from 'path';
 import { BSTMap } from './BSTMap';
 import { AVLMap } from './AVLMap';
 import { LinkedListMap } from './LinkedListMap';
+import { HashTableMap } from './HashTableMap';
 
 interface Obj {
     [index: string]: number;
@@ -25,6 +26,7 @@ let jsObject: Obj = {};
 let test0 = new BSTMap<string, number>();
 let avlTest = new AVLMap<string, number>();
 let test1 = new LinkedListMap<string, number>();
+let htMap = new HashTableMap<string, number>();
 
 const pap = fs.readFileSync(path.join(__dirname, '../static/pride-and-prejudice.txt'));
 const papList = pap.toString().split(/\s+/);
@@ -91,3 +93,15 @@ console.timeEnd('LinkedListMap time');
 console.log(`LinkedListMap pride number: ${test1.get('pride')}`);
 console.log(`LinkedListMap prejudice number: ${test1.get('prejudice')}`);
 console.log(`LinkedListMap getSize(): ${test1.getSize()}\n`);
+
+// 类型：HashTableMap
+// 耗时：50.628ms
+// 统计：23 4 13639
+console.time('HashTableMap time');
+for (let i = 0; i < papList.length; i++) {
+    htMap.add(papList[i], (htMap.get(papList[i]) ?? 0) + 1);
+}
+console.timeEnd('HashTableMap time');
+console.log(`HashTableMap pride number: ${htMap.get('pride')}`);
+console.log(`HashTableMap prejudice number: ${htMap.get('prejudice')}`);
+console.log(`HashTableMap getSize(): ${htMap.getSize()}\n`);
