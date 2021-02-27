@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-27 18:32:31
+ * @LastEditTime: 2021-02-27 21:10:16
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -280,7 +280,7 @@ AVL树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis（英语�
 | getSize() | add(e)     | removeMin() | contains(e) |  inOrder()   | levelOrder() |
 | isEmpty() |            | removeMax() | minimum()   |              |              |
 | isBST()   |            | remove(e)   | maximum()   |              |              |
-| isisBalanced() |       |             |             |              |              |
+| isBalanced() |         |             |             |              |              |
 
 <br />
 
@@ -298,7 +298,20 @@ AVL树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis（英语�
 | --------- | ---------- | ---------       | ----------  | ----------   | ----------   |
 | getSize() | add(e)     | ~~removeMin()~~ | contains(e) |  inOrder()   | levelOrder() |
 | isEmpty() |            | ~~removeMax()~~ | minimum()   |              |              |
-| isBST()   |            | ~~remove(e)~~   | maximum()   |              |              |
-| isBalanced() |         |                 |             |              |              |
+|           |            | ~~remove(e)~~   | maximum()   |              |              |
+|           |            |                 |             |              |              |
+
+<br />
+
+### 15.哈希表 ToyHashTable
+
+其实 JavaScript 中的 Object、Map、Set、WeekMap 和 WeekSet 底层都是 HashTable。
+
+#### API:
+
+| 基础      | 增          | 删              | 查           | 改           |
+| --------- | ---------- | ---------       | ----------  | ----------   |
+| getSize() | add(e)     | delete()        | has(k)      |  set(k, v)   |
+| isEmpty() |            |                 | get(k)      |              |
 
 <br />
