@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 17:53:23
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-22 09:08:53
+ * @LastEditTime: 2021-02-27 13:10:55
  * @FilePath: /Toy-Data-Structures/07-Map/ToyMapTest.ts
  */
 import fs from 'fs';
@@ -12,11 +12,16 @@ import { BSTMap } from './BSTMap';
 import { AVLMap } from './AVLMap';
 import { LinkedListMap } from './LinkedListMap';
 
+interface Obj {
+    [index: string]: number;
+}
+
 // 从耗时上看，
 // jsMap * 10 = BSTMap
 // BSTMap * 100 = LinkedListMap
 
 let jsMap = new Map();
+let jsObject: Obj = {};
 let test0 = new BSTMap<string, number>();
 let avlTest = new AVLMap<string, number>();
 let test1 = new LinkedListMap<string, number>();
@@ -38,6 +43,18 @@ console.timeEnd('jsMap time');
 console.log(`jsMap pride number: ${jsMap.get('pride')}`);
 console.log(`jsMap prejudice number: ${jsMap.get('prejudice')}`);
 console.log(`jsMap getSize(): ${jsMap.size}\n`);
+
+// 类型：JS Object
+// 耗时：20.959ms
+// 统计：23 4 13639
+console.time('jsObject time');
+for (let i = 0; i < papList.length; i++) {
+    jsObject[papList[i]] = (jsObject[papList[i]] ?? 0) + 1;
+}
+console.timeEnd('jsObject time');
+console.log(`jsObject pride number: ${jsObject['pride']}`);
+console.log(`jsObject prejudice number: ${jsObject['prejudice']}`);
+console.log(`jsObject getSize(): ${Object.keys(jsObject).length}\n`);
 
 // 类型：BSTMap
 // 耗时：172.767ms

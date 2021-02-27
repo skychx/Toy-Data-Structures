@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 17:53:15
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-22 20:50:38
+ * @LastEditTime: 2021-02-27 13:14:21
  * @FilePath: /Toy-Data-Structures/06-Set/ToySetTest.ts
  */
 import fs from 'fs';
@@ -13,12 +13,17 @@ import { AVLSet } from './AVLSet';
 import { LinkedListSet } from './LinkedListSet';
 import { ArraySet } from './ArraySet';
 
+interface Obj {
+    [index: string]: null;
+}
+
 // 从耗时上看，
 // jsSet * 10 = BSTSet
 // BSTSet * 100 = LinkedListSet
 // ArraySet 比较奇葩，应该是 V8 内部对 Array 有深度优化
 
 let jsSet = new Set();
+let jsObject: Obj = {};
 let test = new BSTSet<string>();
 let avlSet = new AVLSet<string>();
 let test2 = new LinkedListSet<string>();
@@ -38,6 +43,16 @@ for (let i = 0; i < papList.length; i++) {
 }
 console.timeEnd('jsSet time');
 console.log(`jsSet getSize(): ${jsSet.size}\n`);
+
+// 类型：JS Object
+// 耗时：15.744ms
+// 统计：getSize(): 13639
+console.time('jsObject time');
+for (let i = 0; i < papList.length; i++) {
+    jsObject[papList[i]] = null;
+}
+console.timeEnd('jsObject time');
+console.log(`jsObject getSize(): ${Object.keys(jsObject).length}\n`);
 
 // 类型：BSTSet
 // 耗时：88.978ms
