@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-27 19:07:34
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-27 20:12:08
+ * @LastEditTime: 2021-02-27 20:43:13
  * @FilePath: /Toy-Data-Structures/15-HashTable/ToyHashTableTest.ts
  */
 import fs from 'fs';
@@ -13,7 +13,7 @@ import { ToyHashTable } from './ToyHashTable';
 const pap = fs.readFileSync(path.join(__dirname, '../static/pride-and-prejudice.txt'));
 const papList = pap.toString().split(/\s+/);
 
-let hashTable = new ToyHashTable<string, number>(24593);
+let hashTable = new ToyHashTable<string, number>();
 
 // 类型：HashTable
 // 耗时：12289 31.973ms
@@ -21,6 +21,7 @@ let hashTable = new ToyHashTable<string, number>(24593);
 //      6151  36.377ms
 //      97    39.752ms
 //      53    39.271ms
+//      自动扩容 50.628ms
 console.time('HashTable time');
 for (let i = 0; i < papList.length; i++) {
     hashTable.add(papList[i], (hashTable.get(papList[i]) ?? 0) + 1);
