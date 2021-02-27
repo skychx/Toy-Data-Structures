@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-27 21:10:16
+ * @LastEditTime: 2021-02-27 21:12:12
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -144,7 +144,8 @@
   - **JS Set**：ES6 内置 Set，性能最优
   - **JS Object Set**：ES6 Object 模拟的 Set，只比 Set 慢一点点（根据 JS 规范，Object string key 排序是按插入顺序排序的）
   - **LinkedListSet**：基于 LinkedList 链表实现，`add` `has` `delete` 时间复杂度均为 `O(n)`
-  - **ArraySet**：基于 ToyArray 动态数组实现，`add` `has` `delete` 时间复杂度均为 `O(n)`。
+  - **ArraySet**：基于 ToyArray 动态数组实现，`add` `has` `delete` 时间复杂度均为 `O(n)`
+  - **HashTableSet**：HashTable 模拟的 Set
 
 #### API:
 
@@ -168,6 +169,7 @@
   - **JS Map**：ES6 内置 Map，性能最优
   - **JS Object Map**：ES6 Object 模拟的 Map，只比 Map 慢一点点（根据 JS 规范，Object string key 排序是按插入顺序排序的）
   - **LinkedListMap**：基于 LinkedList 链表实现，`add` `get` `has` `delete` `set` 时间复杂度均为 `O(n)`
+  - **HashTableMap**：HashTable 模拟的 Map
 
 #### API:
 
