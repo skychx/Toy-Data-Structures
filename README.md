@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-27 13:34:06
+ * @LastEditTime: 2021-02-27 18:30:19
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -142,7 +142,7 @@
   - **AVLSet**：基于 AVL Tree 实现，时间复杂度稳定为 `O(logn)`，根据 AVL 特性，不会退化为链表。
 - **无序集合**：Set 中的元素都是无序排列的
   - **JS Set**：ES6 内置 Set，性能最优
-  - **JS Object Map**：ES6 Object 模拟的 Set，只比 Set 慢一点点（根据 JS 规范，Object string key 排序是按插入顺序排序的）
+  - **JS Object Set**：ES6 Object 模拟的 Set，只比 Set 慢一点点（根据 JS 规范，Object string key 排序是按插入顺序排序的）
   - **LinkedListSet**：基于 LinkedList 链表实现，`add` `has` `delete` 时间复杂度均为 `O(n)`
   - **ArraySet**：基于 ToyArray 动态数组实现，`add` `has` `delete` 时间复杂度均为 `O(n)`。
 
@@ -263,5 +263,42 @@
 | 基础       | 并                  | 查                |
 | --------- | ------------------  | ----------------  |
 | getSize() | unionElements(p, q) | isConnected(p, q) |
+
+<br />
+
+
+### 13.AVL ToyAVLTree
+
+AVL树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis（英语：E. M. Landis），他们在1962年的论文《An algorithm for the organization of information》中公开了这一数据结构。
+
+`ToyAVLTree` 为 AVL 的一个实现。
+
+#### API:
+
+| 基础      | 增          | 删          | 查           | 深度优先遍历   | 广度优先遍历   |
+| --------- | ---------- | ---------   | ----------  | ----------   | ----------   |
+| getSize() | add(e)     | removeMin() | contains(e) |  inOrder()   | levelOrder() |
+| isEmpty() |            | removeMax() | minimum()   |              |              |
+| isBST()   |            | remove(e)   | maximum()   |              |              |
+| isisBalanced() |       |             |             |              |              |
+
+<br />
+
+### 14.红黑树 ToyRBTree
+
+红黑树其实和 2-3 树的原理是等价的，结构很复杂，但是有着统计最优的性能。
+
+红黑树相对于AVL树来说，牺牲了部分平衡性以换取插入/删除操作时少量的旋转操作，整体来说性能要优于AVL树。
+
+`ToyRBTree` 只实现了红黑树的 add 操作，delete 操作暂未实现。
+
+#### API:
+
+| 基础      | 增          | 删              | 查           | 深度优先遍历   | 广度优先遍历   |
+| --------- | ---------- | ---------       | ----------  | ----------   | ----------   |
+| getSize() | add(e)     | ~~removeMin()~~ | contains(e) |  inOrder()   | levelOrder() |
+| isEmpty() |            | ~~removeMax()~~ | minimum()   |              |              |
+| isBST()   |            | ~~remove(e)~~   | maximum()   |              |              |
+| isisBalanced() |       |                 |             |              |              |
 
 <br />
