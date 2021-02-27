@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-27 18:30:19
+ * @LastEditTime: 2021-02-27 18:32:31
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -286,7 +286,7 @@ AVL树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis（英语�
 
 ### 14.红黑树 ToyRBTree
 
-红黑树其实和 2-3 树的原理是等价的，结构很复杂，但是有着统计最优的性能。
+红黑树其实和 2-3 树的原理是等价的，结构很复杂，但是有着**统计最优的性能**。
 
 红黑树相对于AVL树来说，牺牲了部分平衡性以换取插入/删除操作时少量的旋转操作，整体来说性能要优于AVL树。
 
@@ -299,6 +299,6 @@ AVL树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis（英语�
 | getSize() | add(e)     | ~~removeMin()~~ | contains(e) |  inOrder()   | levelOrder() |
 | isEmpty() |            | ~~removeMax()~~ | minimum()   |              |              |
 | isBST()   |            | ~~remove(e)~~   | maximum()   |              |              |
-| isisBalanced() |       |                 |             |              |              |
+| isBalanced() |         |                 |             |              |              |
 
 <br />
