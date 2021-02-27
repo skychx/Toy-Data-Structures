@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-07 17:53:15
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-27 13:14:21
+ * @LastEditTime: 2021-02-27 21:02:23
  * @FilePath: /Toy-Data-Structures/06-Set/ToySetTest.ts
  */
 import fs from 'fs';
@@ -12,6 +12,7 @@ import { BSTSet } from './BSTSet';
 import { AVLSet } from './AVLSet';
 import { LinkedListSet } from './LinkedListSet';
 import { ArraySet } from './ArraySet';
+import { HashTableSet } from './HashTableSet';
 
 interface Obj {
     [index: string]: null;
@@ -28,6 +29,7 @@ let test = new BSTSet<string>();
 let avlSet = new AVLSet<string>();
 let test2 = new LinkedListSet<string>();
 let test3 = new ArraySet<string>();
+let htSet = new HashTableSet<string>();
 
 const pap = fs.readFileSync(path.join(__dirname, '../static/pride-and-prejudice.txt'));
 const papList = pap.toString().split(/\s+/);
@@ -93,3 +95,13 @@ for (let i = 0; i < papList.length; i++) {
 }
 console.timeEnd('ArraySet time');
 console.log(`ArraySet getSize(): ${test3.getSize()}\n`);
+
+// 类型：HashTableSet
+// 耗时：50.553ms
+// 统计：getSize(): 13639
+console.time('HashTableSet time');
+for (let i = 0; i < papList.length; i++) {
+    htSet.add(papList[i]);
+}
+console.timeEnd('HashTableSet time');
+console.log(`HashTableSet getSize(): ${htSet.getSize()}\n`);
