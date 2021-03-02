@@ -2,13 +2,22 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-27 21:12:12
+ * @LastEditTime: 2021-03-02 09:15:44
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
 
 用 TypeScript 实现的基础数据结构
 
+> TypeScript 最后会编译为 JavaScript。V8 在执行 JS 时，内部会有各种神奇的优化，所以在部分测试用例里时间复杂度会出现理论与实践不一致的情况。
+
+<br />
+
+## 鸣谢
+
+本仓库主要参考 [@liuyubobobo](https://github.com/liuyubobobo) 老师的代码仓库：[Play-with-Data-Structures](https://github.com/liuyubobobo/Play-with-Data-Structures)，原仓库为 Java 版本，本仓库为 TypeSCript 版本，给多内容和课程可访问 liuyubobobo 老师的慕课网主页：(imooc-liuyubobobo)[https://www.imooc.com/t/108955]。
+
+<br />
 
 ## 调试
 
@@ -301,7 +310,6 @@ AVL树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis（英语�
 | getSize() | add(e)     | ~~removeMin()~~ | contains(e) |  inOrder()   | levelOrder() |
 | isEmpty() |            | ~~removeMax()~~ | minimum()   |              |              |
 |           |            | ~~remove(e)~~   | maximum()   |              |              |
-|           |            |                 |             |              |              |
 
 <br />
 
