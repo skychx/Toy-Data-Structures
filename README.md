@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-03-02 09:15:44
+ * @LastEditTime: 2021-03-02 09:18:34
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -15,7 +15,7 @@
 
 ## 鸣谢
 
-本仓库主要参考 [@liuyubobobo](https://github.com/liuyubobobo) 老师的代码仓库：[Play-with-Data-Structures](https://github.com/liuyubobobo/Play-with-Data-Structures)，原仓库为 Java 版本，本仓库为 TypeSCript 版本，给多内容和课程可访问 liuyubobobo 老师的慕课网主页：(imooc-liuyubobobo)[https://www.imooc.com/t/108955]。
+本仓库主要参考 [@liuyubobobo](https://github.com/liuyubobobo) 老师的代码仓库：[Play-with-Data-Structures](https://github.com/liuyubobobo/Play-with-Data-Structures)，原仓库为 Java 版本，本仓库为 TypeSCript 版本，更多内容和课程可访问 liuyubobobo 老师的慕课网主页 [imooc-liuyubobobo](https://www.imooc.com/t/108955)。
 
 <br />
 
