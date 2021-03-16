@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-03-02 09:18:34
+ * @LastEditTime: 2021-03-16 23:01:49
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -191,7 +191,9 @@
 
 ### 08.堆 ToyHeap
 
-使用**完全二叉树**表示一个堆（二叉堆），这里实现了最大堆 `ToyMaxHeap` 和最小堆 `ToyMinHeap`。其实两者只有数值比较处相反，其它的实现逻辑完全一致。
+使用**完全二叉树**表示一个堆（二叉堆），因为完全二叉树的性质，可以直接用数组存储二叉堆。
+
+这里实现了最大堆 `ToyMaxHeap` 和最小堆 `ToyMinHeap`。其实两者只有数值比较处相反，其它的实现逻辑完全一致。
 
 
 #### API:
