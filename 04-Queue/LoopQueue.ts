@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-04 21:26:18
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-04 23:04:55
+ * @LastEditTime: 2021-03-16 22:59:56
  * @FilePath: /Toy-Data-Structures/04-Queue/LoopQueue.ts
  */
 import { ToyQueue } from './ToyQueue';
@@ -15,9 +15,9 @@ export class LoopQueue<T> implements ToyQueue<T> {
     private size: number;
 
     constructor(capacity: number = 10) {
-        this.data = new Array(capacity + 1); // 循环队列会浪费一个空间
-        this.front = 0;
-        this.tail = 0;
+        this.data = new Array(capacity + 1); // 浪费一个空间，降低循环队列边界的复杂度处理
+        this.front = 0; // front 指向队首
+        this.tail = 0;  // tail 指向下一个元素入队的位置
         this.size = 0;
     }
 
@@ -86,6 +86,17 @@ export class LoopQueue<T> implements ToyQueue<T> {
         }
 
         return this.data[this.front];
+    }
+
+    getTail(): T | null {
+        if (this.isEmpty()) {
+            throw new Error('Queue is empty.');
+        }
+        const len = this.data.length;
+
+        // 因为 this.tail 指向的是下一个要添加元素的位置，如果不是循环，直接 this.tail - 1 就能拿到
+        // 但是这个是循环队列，就要考虑边界了
+        return this.data[(this.tail + len - 1) % len];
     }
 
     // 格式化输出
