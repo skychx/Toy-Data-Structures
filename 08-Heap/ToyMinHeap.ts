@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-08 16:25:17
  * @LastEditors: skychx
- * @LastEditTime: 2021-04-12 09:08:45
+ * @LastEditTime: 2021-04-12 22:00:28
  * @FilePath: /Toy-Data-Structures/08-Heap/ToyMinHeap.ts
  */
 import { ToyHeap } from './ToyHeap';
@@ -112,7 +112,7 @@ export class ToyMinHeap<T> implements ToyHeap<T> {
             // 如果右孩子存在，且右孩子比左孩子大，我们就拿右孩子交换
             if (
                 j + 1 < this.getSize() &&
-                this.data[j + 1] > this.data[j]
+                this.data[j + 1] < this.data[j]
             ) {
                 j++;
                 // j = this.rightChild(i);
