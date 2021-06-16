@@ -2,10 +2,10 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-12 18:08:23
+ * @LastEditTime: 2021-06-16 22:56:09
  * @FilePath: /Toy-Data-Structures/02-LinkedList/ToyLinkedList.ts
  */
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 // 这里把 null 也看成树节点
 export type Node<T> = LinkedNode<T> | null;

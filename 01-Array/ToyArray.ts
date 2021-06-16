@@ -2,10 +2,10 @@
  * @Author: skychx
  * @Date: 2021-02-03 22:10:00
  * @LastEditors: skychx
- * @LastEditTime: 2021-02-12 16:48:08
+ * @LastEditTime: 2021-06-16 22:56:00
  * @FilePath: /Toy-Data-Structures/01-Array/ToyArray.ts
  */
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 // ToyArray 目前只支持同类型的子元素
 export class ToyArray<T> {

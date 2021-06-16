@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-02-07 22:38:28
  * @FilePath: /Toy-Data-Structures/07-Map/LinkedListMap.ts
  */
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { ToyMap } from './ToyMap';
 
 // 链表单节点
