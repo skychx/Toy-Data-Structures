@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-03-16 23:01:49
+ * @LastEditTime: 2021-06-17 09:05:58
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -72,7 +72,8 @@
 
 ### 02.链表 ToyLinkedList
 
-一个简单的单链表实现
+- ToyLinkedList: 单链表
+- ToyDoubleLinkedList: 双向链表
 
 #### API:
 
@@ -325,5 +326,27 @@ AVL树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis（英语�
 | --------- | ---------- | ---------       | ----------  | ----------   |
 | getSize() | add(e)     | delete()        | has(k)      |  set(k, v)   |
 | isEmpty() |            |                 | get(k)      |              |
+
+<br />
+
+
+### 15.缓存算法 Cache
+
+wiki 🔗 : https://www.wikiwand.com/en/Cache_replacement_policies
+
+#### LRU
+
+- ArrayMapLRU：利用 Array 和 Map 构建的 LRU，数据量比较小的时候可以使用
+  - 时间复杂度为 O(n)，因为涉及到数组任意元素的删除操作
+- LinkedListMapLRU：利用「双向链表」和 Map 构建的 LRU，经典实现
+  - 时间复杂度为 O(1)
+
+| 增          | 查           |
+| ----------  | ----------  |
+| put(k, v)   | get(k)      |
+
+#### MRU
+
+#### LFU
 
 <br />
