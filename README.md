@@ -2,7 +2,7 @@
  * @Author: skychx
  * @Date: 2021-02-01 16:53:21
  * @LastEditors: skychx
- * @LastEditTime: 2021-06-17 09:05:58
+ * @LastEditTime: 2021-06-27 11:50:20
  * @FilePath: /Toy-Data-Structures/README.md
 -->
 # Toy-Data-Structures
@@ -318,7 +318,7 @@ AVL树得名于它的发明者 G. M. Adelson-Velsky 和 Evgenii Landis（英语�
 
 ### 15.哈希表 ToyHashTable
 
-其实 JavaScript 中的 Object、Map、Set、WeekMap 和 WeekSet 底层都是 HashTable。
+JavaScript 中的 Object 慢属性底层实现为 HashTable。
 
 #### API:
 
